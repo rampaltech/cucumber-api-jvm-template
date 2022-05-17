@@ -9,19 +9,19 @@ pipeline{
             }
         }
         stage('Validate Stage'){
-                    steps{
-                        withMaven(maven : 'maven_3_8_5'){
-                            sh 'mvn validate'
-                        }
-                    }
+            steps{
+                withMaven(maven : 'maven_3_8_5'){
+                    sh 'mvn validate'
                 }
+            }
+        }
 
         stage('Test Stage'){
-                            steps{
-                                withMaven(maven : 'maven_3_8_5'){
-                                    sh 'mvn test'
-                                }
-                            }
-                        }
+            steps{
+                withMaven(maven : 'maven_3_8_5'){
+                    sh 'mvn test'
+                }
+            }
+        }
     }
 }
